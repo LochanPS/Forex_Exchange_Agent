@@ -1,4 +1,4 @@
-# ⚡ AgentPay
+#  ForexTradePayAgent
 
 > **An AI agent that reads a cross-border invoice, validates it, and pays it in USDC — fully autonomously. No human in the loop. You watch it happen.**
 
