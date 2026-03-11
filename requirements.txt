@@ -1,0 +1,37 @@
+# ============================================================
+# AgentPay — requirements.txt
+# Python 3.11 required
+# Install: pip install -r requirements.txt
+# ============================================================
+
+# ── LLM ─────────────────────────────────────────────────────
+anthropic>=0.49.0              # Claude Sonnet tool use for invoice extraction
+                               # https://github.com/anthropic/anthropic-sdk-python
+
+# ── PDF PROCESSING ──────────────────────────────────────────
+pymupdf>=1.24.0                # PDF text extraction (imports as `fitz`)
+                               # https://pymupdf.readthedocs.io
+fpdf2>=2.7.9                   # Generate typed test invoice PDFs
+                               # https://py-fpdf2.readthedocs.io
+
+# ── BLOCKCHAIN / PAYMENTS ───────────────────────────────────
+web3>=7.0.0                    # ERC-20 USDC transfer on Base Sepolia (fallback path)
+                               # https://web3py.readthedocs.io
+httpx>=0.27.0                  # Async HTTP client for x402 payment requests
+                               # https://www.python-httpx.org
+
+# ── x402 PROTOCOL (optional — install if available) ─────────
+# x402>=0.1.0                  # Official x402 Python SDK
+                               # pip install x402
+                               # https://x402.org
+                               # If unavailable, web3.py ERC-20 path is used automatically
+
+# ── ENVIRONMENT ─────────────────────────────────────────────
+python-dotenv>=1.0.0           # Loads .env variables cleanly
+                               # https://github.com/theskumar/python-dotenv
+
+# ── UTILITIES ───────────────────────────────────────────────
+watchdog>=4.0.0                # Folder watcher — detects new PDFs in inbox/
+                               # https://python-watchdog.readthedocs.io
+eth-account>=0.11.0            # Wallet signing (ships with web3 but pinned for clarity)
+hexbytes>=1.2.0                # Hex byte handling for tx hashes
