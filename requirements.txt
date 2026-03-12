@@ -5,8 +5,8 @@
 # ============================================================
 winget install python python 3.11
 # ── LLM ─────────────────────────────────────────────────────
-anthropic>=0.49.0              # Claude Sonnet tool use for invoice extraction
-                               # https://github.com/anthropic/anthropic-sdk-python
+google-genai>=1.0.0            # Gemini Flash 2.5 tool use for invoice extraction
+                               # https://github.com/googleapis/python-genai
 
 # ── PDF PROCESSING ──────────────────────────────────────────
 pymupdf>=1.24.0                # PDF text extraction (imports as `fitz`)
