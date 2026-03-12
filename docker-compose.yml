@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  agentpay:
+    build: .
+    container_name: agentpay_app
+    env_file:
+      - .env
+    volumes:
+      - ./inbox:/app/inbox
+      - ./settled:/app/settled
+      - ./exceptions:/app/exceptions
+      - ./logs:/app/logs
+    restart: unless-stopped
